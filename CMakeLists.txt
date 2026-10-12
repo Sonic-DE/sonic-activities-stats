@@ -1,17 +1,16 @@
 # vim:set softtabstop=3 shiftwidth=3 tabstop=3 expandtab:
 cmake_minimum_required(VERSION 3.16)
 
-set(PROJECT_VERSION "6.7.5")
+set(PROJECT_VERSION "6.7.80")
 project(PlasmaActivitiesStats VERSION ${PROJECT_VERSION})
 
-set(PROJECT_DEP_VERSION "6.7.0")
-set(QT_MIN_VERSION "6.10.0")
-set(KF6_MIN_VERSION "6.26.0")
+set(PROJECT_DEP_VERSION "6.6.90")
+set(QT_MIN_VERSION "6.11.0")
+set(KF6_MIN_VERSION "6.30.0")
 set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(ECM ${KF6_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
@@ -107,6 +106,4 @@ install(
 # Write out the features
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
-file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
-list(FILTER ALL_CLANG_FORMAT_SOURCE_FILES EXCLUDE REGEX ".*\\.ccls-cache/.*")
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
