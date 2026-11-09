@@ -2,6 +2,10 @@
 
 Sonic Activities Stats keeps track of the files and apps you use most, so SonicDE can show your favorites and recent items where you need them.
 
+## 6.8.2 (2026-11-10)
+
+No SonicDE-specific changes in this release; it brings the package up to date with upstream.
+
 ## 6.8.0 (2026-10-20)
 
 - Behind the scenes: version update and refreshed dependency versions.
